@@ -58,7 +58,7 @@ const AuthState = props => {
         type: REGISTER_SUCCESS,
         payload: res.data
       });
-      
+
       loadUser();
     } catch (err) {
       dispatch({
@@ -67,7 +67,7 @@ const AuthState = props => {
       });
     }
   };
-  
+
   // Login User
   const login = async formData => {
     const config = {
@@ -82,7 +82,7 @@ const AuthState = props => {
         type: LOGIN_SUCCESS,
         payload: res.data
       });
-      
+
       loadUser();
     } catch (err) {
       dispatch({
@@ -93,7 +93,7 @@ const AuthState = props => {
   };
 
   // Logout User
-  const logout = () => console.log('logout');
+  const logout = () => dispatch({ type: LOGOUT });
 
   // Clear Errors
   const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
