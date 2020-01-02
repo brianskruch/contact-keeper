@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
-import { SET_ALERT } from '../../context/types';  // In 63 missing from Brad ???
+//import { SET_ALERT } from '../../context/types';  // In 63 missing from Brad ???
 
 const Register = props => {
   const alertContext = useContext(AlertContext);
@@ -37,7 +37,7 @@ const Register = props => {
     e.preventDefault();
     if (name === '' || email === '' || password === '') {
       setAlert("Please enter all fields", 'danger');
-    } else if (password != password2) {
+    } else if (password !== password2) {
       setAlert("Passwords do not match", 'danger');
     } else {
       register({
